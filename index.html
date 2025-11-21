@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tyler Berglund - A showcase of innovative projects and professional work">
+    <title>Tyler Berglund | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="CSS/minimal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="js/minimal.js" defer></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem; /* Account for fixed header */
+        }
+        
+        :root {
+            --primary-color: #6b7280;
+            --accent-color: #9ca3af;
+            --text-light: #ffffff;
+            --text-dark: #374151;
+            --gradient-start: #f3f4f6;
+            --gradient-mid: #e5e7eb;
+            --gradient-end: #d1d5db;
+            --light-bg: #fafafa;
+            --card-bg: #ffffff;
+        }
+
+        /* Hero section text color */
+        .hero h1, .hero p {
+            color: var(--text-dark) !important;
+        }
+
+        /* Override for resume button */
+        .cta-btn.cta-primary {
+            background-color: var(--text-light);
+            color: var(--text-dark) !important;
+            font-weight: 600;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-btn.cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            letter-spacing: 0.02em;
+            background: rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            display: inline-block;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Navigation styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 36, 66, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 25%, #60a5fa 50%, #2563eb 75%, #1e3a8a 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: var(--text-light);
+            padding: 10rem 0;
+            text-align: center;
+            position: relative;
+            margin-top: 4rem; /* Add space for fixed header */
+            overflow: hidden;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 85% 75%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
+            opacity: 1;
+        }
+        
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(255, 255, 255, 0.03) 20px,
+                    rgba(255, 255, 255, 0.03) 40px
+                ),
+                repeating-linear-gradient(
+                    -45deg,
+                    transparent,
+                    transparent 20px,
+                    rgba(255, 255, 255, 0.02) 20px,
+                    rgba(255, 255, 255, 0.02) 40px
+                );
+            opacity: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .hero-portrait {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 25%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 0 10px rgba(255,255,255,0.1);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5), 0 0 40px rgba(255,255,255,0.4), 0 0 60px rgba(255,255,255,0.2);
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+        
+        .hero-subtitle {
+            color: #ffffff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.5), 0 0 20px rgba(255,255,255,0.3);
+        }
+        
+        .hero-description {
+            color: #ffffff;
+            font-weight: 600;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+        }
+        
+        .video-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e5e7eb 100%);
+            padding: 4rem 0;
+            margin: 0;
+            position: relative;
+        }
+        
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .video-wrapper {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-top: 5px solid #667eea;
+        }
+        
+        .video-wrapper h2 {
+            font-size: 2rem;
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .video-player {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            background: #000;
+        }
+        
+        .professional-intro {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 5rem 0;
+            margin: 0;
+            position: relative;
+        }
+        
+        .intro-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .intro-content {
+            background: white;
+            padding: 3.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-top: 5px solid #667eea;
+        }
+        
+        .intro-content h2 {
+            font-size: 2.2rem;
+            color: #1e3a8a;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 700;
+        }
+        
+        .intro-content p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #374151;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        
+        .intro-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e5e7eb;
+        }
+        
+        .intro-highlight {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .intro-highlight h3 {
+            font-size: 1.2rem;
+            color: #1e3a8a;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .intro-highlight p {
+            font-size: 1rem;
+            color: #6b7280;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .hobbies-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 5rem 0;
+            margin: 0;
+            position: relative;
+        }
+        
+        .hobbies-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hobbies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .hobby-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 5px solid #3b82f6;
+        }
+        
+        .hobby-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 50px rgba(0,0,0,0.15);
+        }
+        
+        .hobby-image-wrapper {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .hobby-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .hobby-card:hover .hobby-image-wrapper img {
+            transform: scale(1.1);
+        }
+        
+        .hobby-content {
+            padding: 2rem;
+        }
+        
+        .hobby-content h3 {
+            font-size: 1.8rem;
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .hobby-content p {
+            font-size: 1.05rem;
+            color: #374151;
+            line-height: 1.8;
+            margin: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .hobbies-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hobby-image-wrapper {
+                height: 250px;
+            }
+        }
+
+        /* Main content section styles */
+        main {
+            position: relative;
+            z-index: 1;
+            background: #ffffff;
+            padding: 4rem 0;
+        }
+        
+        main::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(219, 234, 254, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(191, 219, 254, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 50% 50%, rgba(239, 246, 255, 0.1) 0%, transparent 50%);
+            opacity: 1;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        main::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 30px,
+                    rgba(229, 231, 235, 0.4) 30px,
+                    rgba(229, 231, 235, 0.4) 31px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 30px,
+                    rgba(229, 231, 235, 0.4) 30px,
+                    rgba(229, 231, 235, 0.4) 31px
+                );
+            background-size: 60px 60px;
+            opacity: 0.6;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        main > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #374151;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+            border-radius: 2px;
+        }
+
+        /* Ensure content visibility */
+        .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .section .container {
+            text-align: center;
+        }
+        
+        .hero-description {
+            font-size: 1.4rem;
+            opacity: 1;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-weight: 500;
+            color: #ffffff !important;
+            background: rgba(0, 0, 0, 0.15);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .cta-primary {
+            background: white;
+            color: #000000 !important;  /* Force black text */
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            background: #f8f9fa;
+        }
+        
+        .cta-secondary {
+            background: transparent;
+            color: white !important;  /* Force white text */
+            border: 2px solid white;
+        }
+        
+        .cta-secondary:hover {
+            background: white;
+            color: #1e3a8a;
+            transform: translateY(-2px);
+        }
+        
+        .game-preview {
+            margin: 3rem 0;
+            text-align: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .game-preview h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .game-preview iframe {
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            margin: 1.5rem 0;
+            width: 100%;
+            height: 350px;
+        }
+        
+        .game-description {
+            margin-top: 1rem;
+            color: #666;
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .about-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid #3b82f6;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .about-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6, #60a5fa);
+        }
+        
+        .about-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+        }
+        
+        .about-card h3 {
+            margin-bottom: 1.5rem;
+            color: #374151;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .about-card p {
+            color: #6b7280;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            text-align: left;
+        }
+        
+        .stats-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e5e7eb 100%);
+            padding: 5rem 0;
+            margin: 4rem 0;
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #1e3a8a, #3b82f6, #60a5fa);
+        }
+        
+        .stats-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 30% 40%, rgba(219, 234, 254, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 70% 60%, rgba(191, 219, 254, 0.2) 0%, transparent 50%);
+            opacity: 1;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        .stats-section > * {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: #6b7280;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 0;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .professional-intro {
+                padding: 3rem 0;
+            }
+            
+            .intro-content {
+                padding: 2rem;
+            }
+            
+            .intro-content h2 {
+                font-size: 1.8rem;
+            }
+            
+            .intro-content p {
+                font-size: 1rem;
+            }
+            
+            .intro-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                max-width: 100%;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .game-preview iframe {
+                height: 300px;
+            }
+            
+            .game-preview {
+                padding: 1.5rem;
+            }
+            
+            .hero-portrait {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .video-wrapper {
+                padding: 1.5rem;
+            }
+            
+            .video-wrapper h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+        <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo" style="color: var(--text-light);">TB</a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link" style="color: var(--text-light);">Home</a>
+                    <a href="resume.html" class="nav-link" style="color: var(--text-light);">Resume</a>
+                    <a href="hobbies.html" class="nav-link" style="color: var(--text-light);">Hobbies</a>
+                    <a href="game.html" class="nav-link" style="color: var(--text-light);">Game</a>
+                    <a href="discover.html" class="nav-link" style="color: var(--text-light);">Discover</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <img src="images/IMG_2785 2.jpeg" alt="Tyler Berglund" class="hero-portrait" width="280" height="280" fetchpriority="high">
+                    <h1 class="hero-title">Tyler Berglund</h1>
+                    <p class="hero-subtitle">Freshman Accounting Student | University of Minnesota Duluth</p>
+                    <p class="hero-description">I am a freshman student pursuing accounting at the University of Minnesota Duluth. I love to golf, whether it is with friends, family or by myself it is something I truly love. I also love to watch sports, mainly Minnesota sports, but it can vary from any NFL game to any NBA game or even any MLB game!</p>
+                    <div class="cta-buttons">
+                        <a href="resume.html" class="cta-btn cta-primary">View Resume</a>
+                        <a href="hobbies.html" class="cta-btn cta-secondary">Explore Interests</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <h2>Welcome Video</h2>
+                    <video class="video-player" controls controlsList="nodownload" preload="metadata" width="1000" height="562">
+                        <source src="images/9BCC9077-6874-493C-B632-FE24CDAA2817.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+        <section class="professional-intro">
+            <div class="intro-container">
+                <div class="intro-content">
+                    <h2>Professional Overview</h2>
+                    <p>
+                        I am a dedicated freshman accounting student at the University of Minnesota Duluth, pursuing a Bachelor of Science in Accounting with a strong foundation in financial analysis, accounting principles, and business fundamentals. Having transferred in 39 college credits from my high school PSEO program, I am committed to academic excellence and maintaining my 3.98 GPA from Proctor High School.
+                    </p>
+                    <p>
+                        My passion for accounting stems from my love of working with numbers and understanding how the business world operates financially. I excel at meeting deadlines, collaborating with others, and problem-solving—skills that I believe make me a strong candidate for accounting internships and future career opportunities. I am actively seeking internship opportunities that will provide hands-on experience and set me up for a successful career in the accounting field.
+                    </p>
+                    <p>
+                        Beyond academics, I am deeply connected to my community and the University of Minnesota Duluth. I chose UMD because of its proximity to home, the beautiful Duluth community, and its financial value. Having grown up attending UMD games throughout my life—from hockey and football to basketball—the university has always felt like home. This connection extends to my personal interests as well, where I find balance through golf, a sport I've loved since inheriting my grandfather's clubs, and my lifelong passion for Minnesota sports teams.
+                    </p>
+                    <div class="intro-highlights">
+                        <div class="intro-highlight">
+                            <h3>🎓 Education</h3>
+                            <p>Bachelor of Science in Accounting at UMD, with 39 transferred PSEO credits and a strong academic foundation from Proctor High School (3.98 GPA).</p>
+                        </div>
+                        <div class="intro-highlight">
+                            <h3>💼 Career Focus</h3>
+                            <p>Seeking accounting internships to gain experience, develop professional skills, and establish a foundation for a successful career in financial analysis and business strategy.</p>
+                        </div>
+                        <div class="intro-highlight">
+                            <h3>🏌️ Personal Interests</h3>
+                            <p>Passionate golfer who plays at local courses like Black Bear, Nemadji, and Proctor, and an avid Minnesota sports fan supporting the Timberwolves, Vikings, and Twins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hobbies-section">
+            <div class="hobbies-container">
+                <h2 style="text-align: center; font-size: 2.5rem; color: #374151; margin-bottom: 1rem; font-weight: 700; position: relative; padding-bottom: 1rem;">
+                    My Hobbies
+                    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(90deg, #1e3a8a, #3b82f6); border-radius: 2px; display: block;"></span>
+                </h2>
+                <div class="hobbies-grid">
+                    <div class="hobby-card">
+                        <div class="hobby-image-wrapper">
+                            <img src="images/golf.jpg/50762079-5E87-42F0-8F00-A19DF6A3BB86.jpeg" alt="Nemadji Golf Course">
+                        </div>
+                        <div class="hobby-content">
+                            <h3><i class="fas fa-golf-ball"></i> Golf Enthusiast</h3>
+                            <p>I have always loved the sport, but I really started to love it when my Grandpa passed away and I was passed down his clubs. I typically go to the courses around here like Black Bear, Nemadji and Proctor.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="hobby-card">
+                        <div class="hobby-image-wrapper">
+                            <img src="images/watchingsports.jpg/IMG_0345.jpeg" alt="Target Field - Minnesota Twins">
+                        </div>
+                        <div class="hobby-content">
+                            <h3><i class="fas fa-football-ball"></i> Minnesota Sports Fan</h3>
+                            <p>I love Minnesota sports teams like the Timberwolves, Vikings and Twins. Although they always let me down, I still support them all. I got to go to a Timberwolves playoff game with my dad last year when they played the Thunder and it was a lot of fun!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">Quick Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">3.8</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2029</div>
+                        <div class="stat-label">Graduation</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Passion</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>🎓 Education</h3>
+                        <p>Currently pursuing my Bachelor of Accounting degree at the University of Minnesota Duluth, where I'm developing expertise in financial analysis, auditing, tax preparation, and business strategy.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>🏌️ Golf Enthusiast</h3>
+                        <p>Passionate about golf and the strategic thinking it requires. I love the challenge of course management, technical skill development, and the peaceful atmosphere of the greens.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>🏈 Minnesota Sports Fan</h3>
+                        <p>I enjoy watching sports and am an avid Minnesota sports fan. Whether it's the Timberwolves, Vikings, Twins, or Wild, I love cheering them on and getting let down every year. I also love to attend the games as well.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Tyler Berglund</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">LinkedIn</a>
+                    <a href="#" class="footer-link">GitHub</a>
+                    <a href="#" class="footer-link">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

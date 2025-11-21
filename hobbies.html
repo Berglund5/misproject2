@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobbies | Tyler Berglund</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="CSS/minimal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo" style="color: #ffffff;">TB</a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link" style="color: #ffffff;">Home</a>
+                    <a href="resume.html" class="nav-link" style="color: #ffffff;">Resume</a>
+                    <a href="hobbies.html" class="nav-link" style="color: #ffffff;">Hobbies</a>
+                    <a href="game.html" class="nav-link" style="color: #ffffff;">Game</a>
+                    <a href="discover.html" class="nav-link" style="color: #ffffff;">Discover</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="section" style="margin-top: 4rem;">
+            <h1 class="page-title">My Hobbies & Interests</h1>
+            <p class="subtitle">Exploring life's passions and adventures</p>
+        </section>
+    </div>
+
+    <section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e5e7eb 100%); padding: 5rem 0;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border-left: 4px solid #667eea;">
+                <h2 style="color: #667eea; font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Personal Stories</h2>
+                <h3 style="color: #374151; font-size: 1.3rem; margin-bottom: 1rem; text-align: center; font-weight: 600;">Why These Hobbies Are Meaningful to Me</h3>
+                <p style="color: #333; line-height: 1.9; font-size: 1.1rem; text-align: left;">
+                    Golf is a sport that I truly enjoy because of how much of a mental game it is, there is nobody else to blame but yourself. I also love how much of a scenic game it is, the views at a lot of courses are surreal and awesome. I got into golf mainly because of my Grandfather, but I have just found a true love for the game. I go as much as I can whether that is with my Dad, Bestfriend, Girlfriend or even random people, no matter who it is with it is always a good time!  As for watching sports I have really loved professional sports for a long time. I have been watching the Vikings every weekend with my family for as long as I can remember. One of the biggest Vikings games I can remember was the 2015 wild card playoff game that they lost 10-9 to Seattle, but you also cannot forget the 2017 NFC Championship game where we played the Eagles and lost by a whopping score pf 38-7. I have went to many games throughout my life as well, between the Vikings, Twins, Timberwolves and I have even been to a Wild game. Currently I am following the Timberwolves mainly because of how good they have been and I am a super fan for Anthony Edwards. Overall those are just two of the biggest hobbies that I have and I love being able to golf and watch sports all the time!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section class="section">
+            <div class="grid">
+                <div class="card feature-card">
+                    <div class="card-icon">
+                        <i class="fas fa-golf-ball fa-2x"></i>
+                    </div>
+                    <h2>Golf Enthusiast</h2>
+                    <p class="card-description">I have always loved the sport, but I really started to love it when my Grandpa passed away and I was passed down his clubs. Ever since then I have been huge into golf. In the summer I try to go as many times a week as I can, whether it is with my buddies or my family. I typically go to the courses around here like Black Bear, Nemadji and Proctor.</p>
+                    <div class="card-content">
+                        <div class="carousel-container">
+                            <div class="carousel" id="golfCarousel">
+                                <div class="carousel-slide active">
+                                    <img src="images/golf.jpg/50762079-5E87-42F0-8F00-A19DF6A3BB86.jpeg" alt="Nemadji Golf Course" class="hobby-image">
+                                    <p class="image-caption">Nemadji Golf Course - A beautiful course with challenging holes and stunning natural scenery</p>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/golf.jpg/IMG_2051.jpeg" alt="Black Bear Golf Course" class="hobby-image">
+                                    <p class="image-caption">Black Bear Golf Course - Scenic fairways surrounded by northern Minnesota's beautiful landscape</p>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/golf.jpg/IMG_2500.jpeg" alt="Golf Course View" class="hobby-image">
+                                    <p class="image-caption">Enjoying the peaceful atmosphere and strategic challenge of golf course management</p>
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev" onclick="changeGolfSlide(-1)">❮</button>
+                            <button class="carousel-btn next" onclick="changeGolfSlide(1)">❯</button>
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentGolfSlide(0)"></span>
+                                <span class="dot" onclick="currentGolfSlide(1)"></span>
+                                <span class="dot" onclick="currentGolfSlide(2)"></span>
+                            </div>
+                        </div>
+                        <h3>Favorite Local Courses</h3>
+                        <ul>
+                            <li>Black Bear Golf Course</li>
+                            <li>Nemadji Golf Course</li>
+                            <li>Proctor Golf Course</li>
+                        </ul>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <i class="fas fa-flag"></i>
+                                <span>Local Courses</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>Family & Friends</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card feature-card">
+                    <div class="card-icon">
+                        <i class="fas fa-football-ball fa-2x"></i>
+                    </div>
+                    <h2>Minnesota Sports Fan</h2>
+                    <p class="card-description">Sports has always played a huge role in my life. It all started with playing them throughout my childhood. Now I enjoy watching them more than ever. I love Minnesota sports teams like the Timberwolves, Vikings and Twins. Although they always let me down, I still support them all. I got to go to a Timberwolves playoff game with my dad last year when they played the Thunder and it was a lot of fun!</p>
+                    <div class="card-content">
+                        <div class="carousel-container">
+                            <div class="carousel" id="sportsCarousel">
+                                <div class="carousel-slide active">
+                                    <img src="images/watchingsports.jpg/IMG_0345.jpeg" alt="Target Field - Minnesota Twins" class="sports-image">
+                                    <p class="sports-caption">Target Field - Cheering on the Minnesota Twins in downtown Minneapolis</p>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/watchingsports.jpg/IMG_1570.jpeg" alt="Target Center - Minnesota Timberwolves" class="sports-image">
+                                    <p class="sports-caption">Target Center - Supporting the Minnesota Timberwolves basketball team</p>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="images/watchingsports.jpg/IMG_2020.jpeg" alt="Game Experience" class="sports-image">
+                                    <p class="sports-caption">Live game experience - The excitement and energy of attending professional sports</p>
+                                </div>
+                            </div>
+                            <button class="carousel-btn prev" onclick="changeSportsSlide(-1)">❮</button>
+                            <button class="carousel-btn next" onclick="changeSportsSlide(1)">❯</button>
+                            <div class="carousel-dots">
+                                <span class="dot active" onclick="currentSportsSlide(0)"></span>
+                                <span class="dot" onclick="currentSportsSlide(1)"></span>
+                                <span class="dot" onclick="currentSportsSlide(2)"></span>
+                            </div>
+                        </div>
+                        <h3>My Minnesota Teams</h3>
+                        <ul>
+                            <li>Minnesota Timberwolves - Basketball excitement</li>
+                            <li>Minnesota Vikings - Purple and gold pride</li>
+                            <li>Minnesota Twins - America's pastime</li>
+                        </ul>
+                        <div class="card-stats">
+                            <div class="stat">
+                                <i class="fas fa-trophy"></i>
+                                <span>Playoff Games</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-heart"></i>
+                                <span>Lifelong Fan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 36, 66, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        .feature-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 2rem;
+            transition: var(--transition);
+        }
+
+        .featured-image {
+            margin: 1rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .hobby-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .hobby-image:hover {
+            transform: scale(1.05);
+        }
+
+        .image-caption {
+            padding: 1rem;
+            background: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .card-icon {
+            color: var(--secondary);
+            background: linear-gradient(135deg, rgba(9, 132, 227, 0.1), rgba(0, 206, 201, 0.1));
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .card-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .feature-card:hover .card-icon {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(9, 132, 227, 0.2);
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-card ul li {
+            margin: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+        
+        /* Carousel Container */
+        .carousel-container {
+            position: relative;
+            margin: 1.5rem 0;
+            max-width: 100%;
+        }
+        
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .carousel-slide {
+            display: none;
+            position: relative;
+        }
+        
+        .carousel-slide.active {
+            display: block;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0.4; }
+            to { opacity: 1; }
+        }
+        
+        /* Navigation Buttons */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 1rem 1.2rem;
+            cursor: pointer;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            color: #333;
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        
+        .carousel-btn.prev {
+            left: 10px;
+        }
+        
+        .carousel-btn.next {
+            right: 10px;
+        }
+        
+        /* Dot Indicators */
+        .carousel-dots {
+            text-align: center;
+            padding: 1rem 0;
+        }
+        
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .dot.active,
+        .dot:hover {
+            background-color: #3b82f6;
+            transform: scale(1.2);
+        }
+        
+        /* Ensure images in carousel are properly styled */
+        .carousel-slide .hobby-image,
+        .carousel-slide .sports-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .carousel-slide .image-caption,
+        .carousel-slide .sports-caption {
+            padding: 1rem;
+            background: rgba(255,255,255,0.95);
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .sports-image-container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .sports-image-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .sports-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .sports-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .sports-caption {
+            padding: 1rem;
+            background: rgba(255,255,255,0.95);
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            border-top: 1px solid #eee;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        @media (max-width: 768px) {
+            .sports-image {
+                height: 200px;
+            }
+            
+            .carousel-btn {
+                padding: 0.7rem 0.9rem;
+                font-size: 1rem;
+            }
+            
+            .carousel-btn.prev {
+                left: 5px;
+            }
+            
+            .carousel-btn.next {
+                right: 5px;
+            }
+            
+            .carousel-slide .hobby-image,
+            .carousel-slide .sports-image {
+                height: 250px;
+            }
+        }
+    </style>
+    
+    <script>
+        // Golf Carousel
+        let golfSlideIndex = 0;
+        
+        function showGolfSlide(n) {
+            let slides = document.querySelectorAll('#golfCarousel .carousel-slide');
+            let dots = document.querySelectorAll('.carousel-container:first-of-type .dot');
+            
+            golfSlideIndex = n;
+            
+            if (golfSlideIndex >= slides.length) { golfSlideIndex = 0; }
+            if (golfSlideIndex < 0) { golfSlideIndex = slides.length - 1; }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            slides[golfSlideIndex].classList.add('active');
+            if (dots[golfSlideIndex]) {
+                dots[golfSlideIndex].classList.add('active');
+            }
+        }
+        
+        function changeGolfSlide(n) {
+            golfSlideIndex += n;
+            showGolfSlide(golfSlideIndex);
+        }
+        
+        function currentGolfSlide(n) {
+            golfSlideIndex = n;
+            showGolfSlide(golfSlideIndex);
+        }
+        
+        // Initialize carousel
+        showGolfSlide(golfSlideIndex);
+        
+        // Sports Carousel
+        let sportsSlideIndex = 0;
+        
+        function showSportsSlide(n) {
+            let slides = document.querySelectorAll('#sportsCarousel .carousel-slide');
+            let sportsDots = document.querySelectorAll('.carousel-container:nth-of-type(2) .dot');
+            
+            sportsSlideIndex = n;
+            
+            if (sportsSlideIndex >= slides.length) { sportsSlideIndex = 0; }
+            if (sportsSlideIndex < 0) { sportsSlideIndex = slides.length - 1; }
+            
+            slides.forEach(slide => slide.classList.remove('active'));
+            if (sportsDots) {
+                sportsDots.forEach(dot => dot.classList.remove('active'));
+                if (sportsDots[sportsSlideIndex]) {
+                    sportsDots[sportsSlideIndex].classList.add('active');
+                }
+            }
+            
+            slides[sportsSlideIndex].classList.add('active');
+        }
+        
+        function changeSportsSlide(n) {
+            sportsSlideIndex += n;
+            showSportsSlide(sportsSlideIndex);
+        }
+        
+        function currentSportsSlide(n) {
+            sportsSlideIndex = n;
+            showSportsSlide(sportsSlideIndex);
+        }
+        
+        // Initialize carousel
+        showSportsSlide(sportsSlideIndex);
+        
+        // Auto-advance carousels (optional - can be removed if not desired)
+        setInterval(() => {
+            golfSlideIndex++;
+            showGolfSlide(golfSlideIndex);
+        }, 5000);
+        
+        setInterval(() => {
+            sportsSlideIndex++;
+            showSportsSlide(sportsSlideIndex);
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover why University of Minnesota Duluth is the perfect place for your education and adventure">
+    <title>Discover UMD | Tyler Berglund</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="CSS/minimal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="js/minimal.js" defer></script>
+    <style>
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 36, 66, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        /* UMD Colors */
+        :root {
+            --umd-maroon: #7A0019;
+            --umd-gold: #FFB71B;
+            --umd-dark: #333333;
+            --umd-light: #F9F7F6;
+        }
+        
+        .hero-discover {
+            background: linear-gradient(135deg, var(--umd-maroon) 0%, #8B1F1F 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-discover::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--umd-gold);
+        }
+        
+        .hero-discover h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-discover p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .campus-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .section {
+            padding: 3rem 0;
+        }
+        
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .section-description {
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .campus-image {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 16/9;
+            max-width: 600px;
+            width: 100%;
+        }
+        
+        .campus-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        
+        .campus-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .image-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .campus-image:hover .image-description {
+            transform: translateY(0);
+        }
+        
+        .video-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 4rem 0;
+            margin: 0;
+        }
+        
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .video-wrapper {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--umd-maroon);
+        }
+        
+        .video-wrapper h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--umd-maroon);
+            margin-bottom: 2rem;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .video-wrapper h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--umd-maroon), var(--umd-gold));
+            border-radius: 2px;
+        }
+        
+        .video-player {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            background: #000;
+        }
+        
+        .video-description {
+            text-align: center;
+            color: #666;
+            font-size: 1rem;
+            margin-top: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-discover h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-discover p {
+                font-size: 1.1rem;
+            }
+            
+            .video-wrapper {
+                padding: 1.5rem;
+            }
+            
+            .video-wrapper h2 {
+                font-size: 1.8rem;
+            }
+            
+            .video-section {
+                padding: 3rem 0;
+            }
+        }
+        
+        </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo" style="color: #ffffff;">TB</a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link" style="color: #ffffff;">Home</a>
+                    <a href="resume.html" class="nav-link" style="color: #ffffff;">Resume</a>
+                    <a href="hobbies.html" class="nav-link" style="color: #ffffff;">Hobbies</a>
+                    <a href="game.html" class="nav-link" style="color: #ffffff;">Game</a>
+                    <a href="discover.html" class="nav-link" style="color: #ffffff;">Discover</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-discover">
+        <div class="container">
+            <h1>Discover UMD</h1>
+            <p>Experience the perfect blend of academic excellence and natural beauty at the University of Minnesota Duluth</p>
+        </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e5e7eb 100%); padding: 5rem 0;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border-left: 4px solid var(--umd-maroon);">
+                <h2 style="color: var(--umd-maroon); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Why I Chose UMD</h2>
+                <p style="color: #333; line-height: 1.9; font-size: 1.1rem; text-align: left;">
+                    I chose UMD because it is close to home and I really like Duluth. I enjoy how we have the great lake and have such a nice community, it will always feel like home. It was also a financially smart choice for me and is helping me with saving a lot of money to hopefully keep me out of debt down the road. I have grown up coming to UMD games my whole life, whether it is hockey, football or basketball I have always been around. I also have grown up coming to high school playoff games here.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: linear-gradient(135deg, #f8f9fa 0%, #e5e7eb 100%); padding: 5rem 0;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); border-left: 4px solid var(--umd-maroon);">
+                <h2 style="color: var(--umd-maroon); font-size: 2rem; margin-bottom: 1.5rem; text-align: center;">Personal Stories</h2>
+                <p style="color: #333; line-height: 1.9; font-size: 1.1rem; text-align: left;">
+                    UMD has always been somewhere I thought I would go, my Mother and Uncles have went here and I always thought it was a very nice school. I enjoy watching UMD sports like Hockey, Basketball and on occasion Baseball. I have already met so many people here and it feels such like home. The community here is so great and there is always something going on to make you feel like you arent left out, whether it is a career fair, or a club meeting or some sort of presentation. I have really fallen in love with it here at UMD and I am so glad to call this my home!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="video-container">
+            <div class="video-wrapper">
+                <h2>Experience UMD</h2>
+                <video class="video-player" controls controlsList="nodownload" preload="metadata" width="1000" height="562">
+                    <source src="videos/invideo-ai-1080 30 Seconds to Fall for UMD 2025-11-16.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p class="video-description">Take a moment to discover what makes the University of Minnesota Duluth a special place to learn, grow, and thrive.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="campus" class="section">
+        <div class="container">
+            <h2>Our Beautiful Campus</h2>
+            <div class="campus-gallery">
+                <div class="campus-image">
+                    <img src="images/umd/aerial_view_umd_campus.png" alt="Aerial view of UMD campus" loading="lazy">
+                    <p class="image-description">Aerial view of the beautiful UMD campus</p>
+                </div>
+            </div>
+            <p class="section-description">UMD's campus combines modern architecture with natural surroundings, creating an inspiring environment for learning and growth.</p>
+        </div>
+    </section>
+
+    <section id="life" class="section bg-light">
+        <div class="container">
+            <h2>Student Life</h2>
+            <div class="campus-gallery">
+                <div class="campus-image">
+                    <img src="images/UMD student life .jpeg" alt="UMD Students" loading="lazy">
+                    <p class="image-description">Vibrant campus community of students</p>
+                </div>
+            </div>
+            <p class="section-description">Join a diverse community of over 11,000 students from across the globe, creating a rich cultural environment for learning and growth.</p>
+        </div>
+    </section>
+
+    <section id="location" class="section">
+        <div class="container">
+            <h2>Location</h2>
+            <div class="campus-gallery">
+                <div class="campus-image">
+                    <img src="images/umd/UMD location 2 .webp" alt="UMD Location - Lake Superior" loading="lazy">
+                    <p class="image-description">Beautiful UMD location overlooking Lake Superior</p>
+                </div>
+            </div>
+            <p class="section-description">Nestled on the hills overlooking Lake Superior, UMD offers stunning views and access to outdoor recreation year-round.</p>
+        </div>
+    </section>
+
+    <section id="athletics" class="section bg-light">
+        <div class="container">
+            <h2>Bulldog Athletics</h2>
+            <div class="campus-gallery">
+                <div class="campus-image">
+                    <img src="images/umd/UMD hockey photo.jpg" alt="UMD Hockey" loading="lazy">
+                    <p class="image-description">Legendary Division I Hockey program</p>
+                </div>
+            </div>
+            <p class="section-description">Home to the legendary Bulldog Hockey program with multiple national championships. Competitive NCAA Division II programs in football, basketball, volleyball, and more.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Tyler Berglund | Images courtesy of UMD</p>
+        </div>
+    </footer>
+</body>
+</html>

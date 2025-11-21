@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tyler Berglund - Professional Resume and Experience">
+    <title>Resume | Tyler Berglund</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="CSS/minimal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <script src="js/minimal.js" defer></script>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --accent-color: #3b82f6;
+            --text-light: #ffffff;
+            --text-dark: #1a202c;
+            --gradient-start: #0f2442;
+            --gradient-mid: #1e40af;
+            --gradient-end: #2563eb;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 36, 66, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem;
+            background: #ffffff;
+        }
+        
+        .companies-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e5e7eb 100%);
+            padding: 4rem 0;
+            margin: 2rem 0;
+        }
+        
+        .companies-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .companies-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .company-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--accent-color);
+        }
+        
+        .company-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .company-info {
+            color: #333;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        
+        .company-info strong {
+            color: var(--accent-color);
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .company-info strong:first-child {
+            margin-top: 0;
+        }
+        
+        .company-info span {
+            display: block;
+            margin-left: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .companies-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .resume-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            color: var(--text-light);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resume-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+        
+        .resume-header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.75rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .resume-header .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: background-color 0.3s ease;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .resume-section {
+            margin-bottom: 2.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3b82f6;
+            font-weight: 600;
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .education-item:last-child, .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .item-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .item-date {
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+        
+        .item-organization {
+            color: #1e3a8a;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        .item-description {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .skill-category h4 {
+            color: #1e3a8a;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .skill-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-list li {
+            padding: 0.3rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1rem;
+        }
+        
+        .skill-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        .achievements-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .achievements-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+        
+        .achievements-list li::before {
+            content: '🏆';
+            position: absolute;
+            left: 0;
+        }
+        
+        .download-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .download-btn {
+            background: #1e3a8a;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .resume-container {
+                padding: 1rem;
+            }
+            
+            .resume-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .item-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo" style="color: #ffffff;">TB</a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link" style="color: #ffffff;">Home</a>
+                    <a href="resume.html" class="nav-link" style="color: #ffffff;">Resume</a>
+                    <a href="hobbies.html" class="nav-link" style="color: #ffffff;">Hobbies</a>
+                    <a href="game.html" class="nav-link" style="color: #ffffff;">Game</a>
+                    <a href="discover.html" class="nav-link" style="color: #ffffff;">Discover</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="resume-container">
+            <div class="resume-header">
+                <h1>Tyler Berglund</h1>
+                <p class="subtitle">Accounting Student | University of Minnesota Duluth</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>Twberglund55@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Duluth, MN</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>linkedin.com/in/tylerberglund</span>
+                    </div>
+                </div>
+                
+                <div class="resume-upload-section" style="margin-top: 2rem; padding-top: 2rem; border-top: 2px solid rgba(255,255,255,0.3);">
+                    <a href="Resume.pdf" download="Tyler_Berglund_Resume.pdf" style="display: inline-block; background: white; color: var(--primary-color); padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">
+                        <i class="fas fa-download"></i> Download Resume PDF
+                    </a>
+                </div>
+            </div>
+
+            <div class="resume-section" style="background: #ffffff; border: 2px solid #e5e7eb; border-radius: 12px; padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+                <h2 class="section-title" style="text-align: center; margin-bottom: 2rem; font-size: 1.8rem; color: var(--primary-color);">Resume</h2>
+                
+                <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid #e5e7eb;">
+                    <h3 style="font-size: 1.3rem; color: var(--primary-color); margin-bottom: 0.5rem; font-weight: 600;">Education</h3>
+                    <div style="margin-bottom: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <div>
+                                <strong style="color: #1a202c; font-size: 1.05rem;">Bachelor of Science in Accounting</strong>
+                                <div style="color: #4a5568; font-size: 0.95rem; margin-top: 0.25rem;">University of Minnesota Duluth</div>
+                            </div>
+                            <div style="color: #718096; font-size: 0.9rem; white-space: nowrap; margin-left: 1rem;">2025 - Present</div>
+                        </div>
+                        <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">
+                            Freshman student pursuing a Bachelor of Science in Accounting. Currently developing expertise in financial analysis, accounting principles, and business fundamentals. Transferred in 39 college credits from high school PSEO program.
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <div>
+                                <strong style="color: #1a202c; font-size: 1.05rem;">High School Diploma</strong>
+                                <div style="color: #4a5568; font-size: 0.95rem; margin-top: 0.25rem;">Proctor High School, Proctor, Minnesota</div>
+                            </div>
+                            <div style="color: #718096; font-size: 0.9rem; white-space: nowrap; margin-left: 1rem;">Graduated 2025</div>
+                        </div>
+                        <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">
+                            Graduated with a 3.98 GPA. Completed PSEO (Post-Secondary Enrollment Options) program earning 39 college credits prior to graduation. Active in school activities and maintained excellent academic standing throughout high school career.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid #e5e7eb;">
+                    <h3 style="font-size: 1.3rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 600;">Work Experience</h3>
+                    <div>
+                        <div style="margin-bottom: 0.5rem;">
+                            <strong style="color: #1a202c; font-size: 1.05rem;">Target Employee</strong>
+                            <div style="color: #4a5568; font-size: 0.95rem; margin-top: 0.25rem;">Target Corporation</div>
+                        </div>
+                        <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">
+                            Gained valuable experience in retail operations, customer service, and teamwork in a fast-paced environment.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid #e5e7eb;">
+                    <h3 style="font-size: 1.3rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 600;">Volunteer Work</h3>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: #1a202c; font-size: 1.05rem;">Healing Paws Animal Rescue</strong>
+                        <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">
+                            Volunteered with animal rescue organization, assisting with care and support for rescued animals.
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 1rem;">
+                        <strong style="color: #1a202c; font-size: 1.05rem;">Disabled American Veterans Events</strong>
+                        <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">
+                            Participated in and supported events for Disabled American Veterans, contributing to community service efforts.
+                        </div>
+                    </div>
+                    <div>
+                        <strong style="color: #1a202c; font-size: 1.05rem;">Night to Shine</strong>
+                        <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">
+                            Volunteered at Night to Shine, a prom night experience for people with special needs, helping create memorable experiences for participants.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid #e5e7eb;">
+                    <h3 style="font-size: 1.3rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 600;">Projects & Experience</h3>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                            <div>
+                                <strong style="color: #1a202c; font-size: 1.05rem;">Personal Portfolio Website</strong>
+                                <div style="color: #4a5568; font-size: 0.95rem; margin-top: 0.25rem;">Personal Project</div>
+                            </div>
+                            <div style="color: #718096; font-size: 0.9rem; white-space: nowrap; margin-left: 1rem;">2025</div>
+                        </div>
+                        <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.6; margin-top: 0.5rem;">
+                            Created a modern, responsive portfolio website showcasing academic achievements, hobbies, and professional interests. Built with semantic HTML, CSS Grid/Flexbox, and vanilla JavaScript. Demonstrates technical skills and attention to detail.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid #e5e7eb;">
+                    <h3 style="font-size: 1.3rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 600;">Skills</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                        <div>
+                            <strong style="color: #1a202c; font-size: 1rem; display: block; margin-bottom: 0.5rem;">Technical Skills</strong>
+                            <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.8;">
+                                • Microsoft Office Suite<br>
+                                • Excel (Advanced Functions)<br>
+                                • Web Development<br>
+                                • HTML/CSS/JavaScript
+                            </div>
+                        </div>
+                        <div>
+                            <strong style="color: #1a202c; font-size: 1rem; display: block; margin-bottom: 0.5rem;">Professional Skills</strong>
+                            <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.8;">
+                                • Detail-oriented<br>
+                                • Analytical thinking<br>
+                                • Time management<br>
+                                • Collaborative teamwork
+                            </div>
+                        </div>
+                        <div>
+                            <strong style="color: #1a202c; font-size: 1rem; display: block; margin-bottom: 0.5rem;">Academic Skills</strong>
+                            <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.8;">
+                                • Accounting principles<br>
+                                • Financial analysis<br>
+                                • Problem-solving<br>
+                                • Data interpretation
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 1.3rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 600;">Interests & Hobbies</h3>
+                    <div style="color: #4a5568; font-size: 0.95rem; line-height: 1.8;">
+                        <strong style="color: #1a202c;">Golf:</strong> I love to golf, whether it is with friends, family or by myself it is something I truly love.<br><br>
+                        <strong style="color: #1a202c;">Sports:</strong> I love to watch sports, mainly Minnesota sports, but it can vary from any NFL game to any NBA game or even any MLB game!<br><br>
+                        <strong style="color: #1a202c;">Web Development:</strong> Enjoy creating interactive web applications and learning new technologies.
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-section">
+                <h2 class="section-title">Career Interests</h2>
+                <div class="item-description">
+                    <p style="margin-bottom: 2rem;">I am exploring opportunities in the field of accounting, though I have not yet fully decided on a specific career path. 
+                    As a freshman accounting student, I am actively learning about various aspects of the accounting profession and 
+                    considering different specializations and career directions within the field. I am open to exploring internships, 
+                    networking opportunities, and learning experiences that will help me determine the best fit for my skills and interests.</p>
+                </div>
+            </div>
+
+            <div class="companies-section">
+                <div class="companies-container">
+                    <h2 style="text-align: center; font-size: 2.2rem; color: var(--primary-color); margin-bottom: 1rem; font-weight: 700; position: relative; padding-bottom: 1rem; line-height: 1.3;">
+                        Companies I am interested in working for and their contact information
+                        <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); border-radius: 2px; display: block;"></span>
+                    </h2>
+                    <p style="text-align: center; color: #666; font-size: 1.1rem; margin-bottom: 2rem;">Contact information for companies I am exploring for future career opportunities</p>
+                    <div class="companies-grid">
+                        <div class="company-card">
+                            <h3>Froehling Anderson Accountants and Advisors</h3>
+                            <div class="company-info">
+                                <strong>Minneapolis Office:</strong>
+                                <span>400 Highway 169 South, Suite 400, Minneapolis, MN 55426</span>
+                                <span>Phone: (952) 979-3100</span>
+                                <span>Fax: (952) 979-3159</span>
+                                
+                                <strong>St. Cloud Office:</strong>
+                                <span>1010 West St. Germain Street, Suite 201, St. Cloud, MN 56301</span>
+                                <span>Phone: (320) 200-2211</span>
+                                
+                                <strong>Additional Contact:</strong>
+                                <span>Website: fa-cpa.com</span>
+                                <span>Toll-free: (877) 979-4446</span>
+                                <span>CEO: David F. Benusa, CPA</span>
+                            </div>
+                        </div>
+                        
+                        <div class="company-card">
+                            <h3>Olsen Thielen CPAs & Advisors</h3>
+                            <div class="company-info">
+                                <strong>Head Office (Roseville, MN):</strong>
+                                <span>2675 Long Lake Road, Roseville, MN 55113</span>
+                                <span>Phone: 651-483-4521</span>
+                                <span>Toll-free: 800-866-4521</span>
+                                <span>Fax: 651-483-2467</span>
+                                
+                                <strong>Eden Prairie Office:</strong>
+                                <span>300 Prairie Center Dr., Suite 300, Eden Prairie, MN 55344-7908</span>
+                                <span>Phone: 952-941-9242</span>
+                                <span>Toll-free: 800-866-4521</span>
+                                
+                                <strong>Key Contact:</strong>
+                                <span>Adam Thielen, Principal, CPA — Roseville Office</span>
+                                <span>Phone: 651-621-8560</span>
+                                
+                                <strong>General Contact:</strong>
+                                <span>Email: info@otcpas.com</span>
+                                <span>Website: otcpas.com</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600; text-align: center;">Why I Like Each Internship Opportunity</h3>
+                        <p style="line-height: 1.8; color: #333; text-align: center; max-width: 800px; margin: 0 auto;">
+                            I like each internship because they are both unique to their programs, they both give you good experience in the accounting world and give you a good head start for a possible future career in either company. I also like how you would be able to learn some about their company and the way each company operates, which could set you up for a possible career with them and you would know what you are getting into.
+                        </p>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid rgba(0,0,0,0.1);">
+                        <h3 style="color: var(--primary-color); font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600; text-align: center;">Why I Believe I Would Be a Great Fit</h3>
+                        <p style="line-height: 1.8; color: #333; text-align: center; max-width: 800px; margin: 0 auto;">
+                            I believe I would be fit for these positions because I am an Accounting major who loves working with numbers, and understanding how the business world works financially! I also do well with being productive and getting things done by a deadline, as well as working with others and problem solving. So ultimately I believe my skills could bring a lot to their team and make them more successful. I also like these job internship opportunities because it would set me up with experience and allow me to get a headstart in the accounting field to begin to seek my lifelong career! I believe these internships would set me up for a successful career down the road and could possibly even set me up for a great future with one of these companies!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Tyler Berglund</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">LinkedIn</a>
+                    <a href="#" class="footer-link">GitHub</a>
+                    <a href="#" class="footer-link">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
